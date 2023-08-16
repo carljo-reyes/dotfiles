@@ -1,3 +1,4 @@
+-- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -10,18 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
+-- lazy.nvim
 vim.opt.rtp:prepend(lazypath)
-
-require('options')
-
-
-local plugins = {
-    {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-}
-
 require("lazy").setup("plugins")

@@ -5,12 +5,12 @@ return {
     opts = {
         transparent = true,
         on_highlights = function(hl, c)
-            hl.NvimTreeNormal = {
+            hl.NeoTreeNormal = {
                 bg = c.none,
                 fg = c.none
             }
 
-            hl.NvimTreeNormalNC = {
+            hl.NeoTreeNormalNC = {
                 bg = c.none,
                 fg = c.none
             }

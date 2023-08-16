@@ -1,18 +1,17 @@
 return {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  config = function()
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-    vim.opt.termguicolors = true
-
-    require("nvim-tree").setup {}
-  end,
-  keys = {
-    {"<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer"}
-  }
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+    },
+    config = function()
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+        vim.opt.termguicolors = true
+    end,
+    keys = {
+        {"<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer"}
+    }
 }

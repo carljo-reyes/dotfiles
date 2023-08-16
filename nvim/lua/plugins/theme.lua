@@ -1,8 +1,20 @@
 return {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     opts = {
-        transparent = true
+        transparent = true,
+        on_highlights = function(hl, c)
+            hl.NvimTreeNormal = {
+                bg = c.none,
+                fg = c.none
+            }
+
+            hl.NvimTreeNormalNC = {
+                bg = c.none,
+                fg = c.none
+            }
+        end
     },
     init = function()
         vim.cmd[[colorscheme tokyonight]]

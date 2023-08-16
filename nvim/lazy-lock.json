@@ -1,5 +1,6 @@
 {
   "gitsigns.nvim": { "branch": "main", "commit": "55f8fc7b13205d44359080ed00095674c353bd76" },
   "lazy.nvim": { "branch": "main", "commit": "dac844ed617dda4f9ec85eb88e9629ad2add5e05" },
+  "nvim-treesitter": { "branch": "master", "commit": "64d1696d6d2e389e99542bddf1579e527b000398" },
   "tokyonight.nvim": { "branch": "main", "commit": "1ee11019f8a81dac989ae1db1a013e3d582e2033" }
 }

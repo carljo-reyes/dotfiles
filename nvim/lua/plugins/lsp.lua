@@ -1,5 +1,5 @@
 local servers = require('cal.lspconfig.servers')
-local bindkey = require('cal.lspconfig.keymaps')
+local lsp_bindKeymaps = require('cal.lspconfig.bind_keymaps')
 
 return {
     {
@@ -30,7 +30,7 @@ return {
                 function(server_name)
                     require('lspconfig')[server_name].setup {
                         capabilities = capabilities,
-                        on_attach = bindkey,
+                        on_attach = lsp_bindKeymaps,
                         settings = servers[server_name],
                         filetypes = (servers[server_name] or {}).filetypes,
                     }

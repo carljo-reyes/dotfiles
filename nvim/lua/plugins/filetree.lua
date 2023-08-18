@@ -24,8 +24,8 @@ return {
     },
     keys = {
         {"<M-e>", "<cmd>Neotree toggle reveal<cr>", desc = "Explorer"},
-        {"<leader>ef", "<cmd>Neotree toggle float<cr>", desc = "Explorer"},
-        {"<leader>eh", "<cmd>Neotree toggle left<cr>", desc = "Explorer"},
-        {"<leader>el", "<cmd>Neotree toggle right<cr>", desc = "Explorer"},
+        {"<leader>ef", "<cmd>Neotree toggle float<cr>", desc = "Explorer float"},
+        {"<leader>eh", "<cmd>Neotree toggle left<cr>", desc = "Explorer left"},
+        {"<leader>el", "<cmd>Neotree toggle right<cr>", desc = "Explorer right"},
     }
 }

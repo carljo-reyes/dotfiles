@@ -19,7 +19,7 @@ return {
         dependencies = {
             { 'williamboman/mason-lspconfig.nvim' },
             { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-            { 'folke/neodev.nvim', config = true },
+            { 'folke/neodev.nvim', config = true, ft = 'lua'},
             { 'hrsh7th/cmp-nvim-lsp' },
         },
         init = function()

@@ -2,6 +2,7 @@ local setn = function(lhs, rhs)
     vim.keymap.set('n', lhs, rhs)
 end
 
+setn("<M-l>", "<cmd>Lazy<cr>");
 setn("<M-q>", "<cmd>bd<cr>");
 setn("<M-Q>", "<cmd>qa!<cr>");
 

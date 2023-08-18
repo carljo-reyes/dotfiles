@@ -1,0 +1,26 @@
+{
+    "workspace.library": [
+        "/home/cal/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/tmp/.mount_nvimk2HIv3/usr/share/nvim/runtime/lua",
+        "/home/cal/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/home/cal/.local/share/nvim/lazy/neo-tree.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/mason-lspconfig.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/plenary.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/gitsigns.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/home/cal/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/nvim-treesitter/lua",
+        "/home/cal/.local/share/nvim/lazy/tokyonight.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/home/cal/.local/share/nvim/lazy/nui.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/mason.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/blanket.nvim/lua",
+        "/home/cal/.local/share/nvim/lazy/nvim-web-devicons/lua",
+        "/home/cal/.local/share/nvim/lazy/LuaSnip/lua",
+        "/home/cal/.local/share/nvim/lazy/cmp_luasnip/lua",
+        "/home/cal/.local/share/nvim/lazy/fidget.nvim/lua",
+        "/home/cal/dotfiles/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}

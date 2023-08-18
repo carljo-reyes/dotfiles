@@ -2,7 +2,7 @@
 -- General Neovim settings and configuration
 -----------------------------------------------------------
 
-local g = vim.g       -- Global variables
+-- local g = vim.g       -- Global variables
 local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 
 -----------------------------------------------------------
@@ -11,7 +11,6 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 opt.mouse = 'a'                       -- Enable mouse support
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
-opt.backspace = 'indent,start'
 
 
 -----------------------------------------------------------
@@ -19,7 +18,8 @@ opt.backspace = 'indent,start'
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.relativenumber = true   -- Show relative line number
-opt.showmatch = true        -- Highlight matching parenthesis
+opt.scrolloff = 16
+-- opt.showmatch = true        -- Highlight matching parenthesis
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom

@@ -62,10 +62,17 @@ return {
     end,
     keys = {
         {
-            "<leader>;c",
+            "<leader>;c", -- test method under [c]ursor
             function()
                 require('jdtls.dap').setup_dap()
                 require('jdtls').test_nearest_method()
+            end
+        },
+        {
+            "<leader>;C", -- test [C]lass
+            function()
+                require('jdtls.dap').setup_dap()
+                require('jdtls').test_class()
             end
         }
     }

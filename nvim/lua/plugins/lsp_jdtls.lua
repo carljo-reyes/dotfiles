@@ -6,13 +6,13 @@ return {
     'mfussenegger/nvim-jdtls',
     ft = 'java',
     lazy = false,
-    config = function()
+    opts = function()
         local bundles = {
             vim.fn.glob('/home/cal/Programs/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar', true),
         }
         vim.list_extend(bundles, vim.split(vim.fn.glob("/home/cal/Programs/vscode-java-test/server/*.jar", true), "\n"))
 
-        local opts =  {
+        return {
             cmd = {
                 os.getenv("JDTLS_JAVA_HOME") .. '/bin/java',
                 '-Declipse.application=org.eclipse.jdt.ls.core.id1',
@@ -47,6 +47,8 @@ return {
                 lsp_bindKeymaps(client, bufnr)
             end,
         }
+        end,
+    config = function(_, opts)
 
         local augroup = vim.api.nvim_create_augroup("Java", {clear = true})
 

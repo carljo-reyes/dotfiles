@@ -9,9 +9,8 @@ return {
                         ["q"] = actions.close
                     },
                     i = {
-                        ["<esc>"] = actions.close,
-                        ["<M-j>"] = actions.move_selection_next,
-                        ["<M-k>"] = actions.move_selection_previous
+                        ["<C-j>"] = actions.move_selection_next,
+                        ["<C-k>"] = actions.move_selection_previous
                     }
                 }
             }
@@ -21,6 +20,10 @@ return {
     keys = {
         { "<leader>f", function() require('telescope.builtin').find_files() end },
         { "<leader>F", function() require('telescope.builtin').live_grep() end },
-        { "<M-f>", function() require('telescope.builtin').buffers() end },
+        { "<leader>h", function() require('telescope.builtin').help_tags() end },
+        { "<leader> ", function() require('telescope.builtin').buffers() end },
+
+        { "<M-f>", function() require('telescope.builtin').find_files() end },
+        { "<M-F>", function() require('telescope.builtin').live_grep() end },
     }
 }

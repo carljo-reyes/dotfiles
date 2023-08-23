@@ -11,6 +11,7 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 opt.mouse = 'a'                       -- Enable mouse support
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
+opt.signcolumn = "auto:4"
 
 
 -----------------------------------------------------------

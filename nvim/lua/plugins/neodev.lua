@@ -9,5 +9,5 @@ return {
             plugins = { "nvim-dap-ui" },
             types = true
         },
-    }
+    },
 }

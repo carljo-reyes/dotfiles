@@ -19,7 +19,8 @@ opt.signcolumn = "auto:4"
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.relativenumber = true   -- Show relative line number
-opt.scrolloff = 16
+opt.scrolloff = 4
+opt.cursorline = true
 -- opt.showmatch = true        -- Highlight matching parenthesis
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 opt.splitright = true       -- Vertical split to the right
@@ -36,4 +37,5 @@ opt.laststatus=3            -- Set global statusline
 opt.expandtab = true        -- Use spaces instead of tabs
 opt.shiftwidth = 4          -- Shift 4 spaces when tab
 opt.tabstop = 4             -- 1 tab == 4 spaces
+opt.softtabstop = 4
 opt.smartindent = true      -- Autoindent new lines

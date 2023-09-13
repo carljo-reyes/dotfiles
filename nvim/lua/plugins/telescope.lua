@@ -10,7 +10,8 @@ return {
                     },
                     i = {
                         ["<C-j>"] = actions.move_selection_next,
-                        ["<C-k>"] = actions.move_selection_previous
+                        ["<C-k>"] = actions.move_selection_previous,
+                        ["<c-d>"] = actions.delete_buffer + actions.move_to_top
                     }
                 }
             }

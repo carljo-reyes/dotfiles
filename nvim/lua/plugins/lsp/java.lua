@@ -25,8 +25,8 @@ return {
                 '--add-modules=ALL-SYSTEM',
                 '--add-opens', 'java.base/java.util=ALL-UNNAMED',
                 '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-                '-jar', '/home/cal/Programs/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-                '-configuration', '/home/cal/Programs/jdtls/config_linux',
+                '-jar', '/home/cal/Programs/vscode-java/server/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar',
+                '-configuration', '/home/cal/Programs/vscode-java/server/config_linux',
                 '-data', workspace_dir,
             },
             root_dir = vim.fn.getcwd(),
@@ -34,7 +34,7 @@ return {
                 java = {
                     configuration = {
                         runtimes = {
-                            { name = 'JavaSE-17', path = '/home/cal/.sdkman/candidates/java/17.0.8-tem/' },
+                            { name = 'JavaSE-17', path = '/home/cal/.sdkman/candidates/java/17.0.6-amzn/' },
                             { name = 'JavaSE-1.8', path = '/home/cal/.sdkman/candidates/java/8.0.352-amzn/' }
                         }
                     }
@@ -71,8 +71,15 @@ return {
         {
             "<leader>;C", -- test [C]lass
             function()
+                vim.cmd[[ up ]]
                 require('jdtls.dap').setup_dap()
                 require('jdtls').test_class()
+            end
+        },
+        {
+            "gt",
+            function()
+                require("jdtls.tests").goto_subjects()
             end
         }
     }

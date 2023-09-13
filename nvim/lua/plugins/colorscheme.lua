@@ -1,3 +1,8 @@
+local function make_transparent(hlgroup, c)
+    hlgroup.bg = c.none
+    hlgroup.fg = c.none
+end
+
 return {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -5,15 +10,9 @@ return {
     opts = {
         transparent = true,
         on_highlights = function(hl, c)
-            hl.NeoTreeNormal = {
-                bg = c.none,
-                fg = c.none
-            }
-
-            hl.NeoTreeNormalNC = {
-                bg = c.none,
-                fg = c.none
-            }
+            make_transparent(hl.NeoTreeNormal, c)
+            make_transparent(hl.NeoTreeNormalNC, c)
+            make_transparent(hl.NormalSB, c)
         end
     },
     init = function()

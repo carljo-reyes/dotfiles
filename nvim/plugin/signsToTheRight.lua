@@ -27,6 +27,6 @@ function M.column()
   return table.concat(components, "")
 end
 
-vim.opt.statuscolumn = [[%!v:lua.Status.column()]]
+-- vim.opt.statuscolumn = [[%!v:lua.Status.column()]]
 
 return M

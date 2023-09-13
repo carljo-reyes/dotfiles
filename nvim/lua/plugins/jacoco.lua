@@ -1,20 +1,26 @@
 return {
     'dsych/blanket.nvim',
     ft = 'java',
-    init = function()
+    opts = function()
+        local currentFileDirectory = vim.fn.expand('%:p:h')
+        local modulePom = vim.fs.find('pom.xml', { upward = true, path = currentFileDirectory })[1]
+        local coverageFile = vim.fs.dirname(modulePom) .. '/target/site/jacoco/jacoco.xml'
+        return {
+            report_path = coverageFile,
+            signs = {
+                -- incomplete_branch = "〰",
+                -- uncovered = "❌",
+                -- covered = "✅",
+            }
+        }
+    end,
+    config = function(_, opts)
         local augroup = vim.api.nvim_create_augroup("JaCoCo", {clear = true})
         vim.api.nvim_create_autocmd("FileType", {
             pattern = "java",
             group = augroup,
             callback = function()
-                print 'jacoco foo'
-                local currentFileDirectory = vim.fn.expand('%:p:h')
-                local modulePom = vim.fs.find('pom.xml', { upward = true, path = currentFileDirectory })[1]
-                local coverageFile = vim.fs.dirname(modulePom) .. '/target/site/jacoco/jacoco.xml'
-
-                require('blanket').setup({
-                    report_path = coverageFile
-                })
+                require('blanket').setup(opts)
             end
         })
     end,

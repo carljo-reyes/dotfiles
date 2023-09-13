@@ -17,6 +17,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {
-    change_detection = { enabled = true, notify = false },
+    change_detection = {
+        enabled = true, notify = false
+    },
+    install = {
+        missing = true,
+        colorscheme = { "tokyonight" },
+    }
 }
-require("lazy").setup("plugins", opts)
+require("lazy").setup({
+    { import = "plugins" },
+    { import = "plugins.debugger" },
+    { import = "plugins.lsp" }
+}, opts)

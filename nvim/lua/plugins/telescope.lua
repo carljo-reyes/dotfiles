@@ -19,12 +19,11 @@ return {
     end,
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-        { "<leader>f", function() require('telescope.builtin').find_files() end },
-        { "<leader>F", function() require('telescope.builtin').live_grep() end },
         { "<leader>h", function() require('telescope.builtin').help_tags() end },
-        { "<leader> ", function() require('telescope.builtin').buffers() end },
+        { "<leader><leader>", function() require('telescope.builtin').buffers() end },
 
         { "<M-f>", function() require('telescope.builtin').find_files() end },
         { "<M-F>", function() require('telescope.builtin').live_grep() end },
+        { "<leader>k", '<cmd>Telescope keymaps<cr>' },
     }
 }

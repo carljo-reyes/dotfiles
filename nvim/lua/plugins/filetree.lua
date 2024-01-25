@@ -7,6 +7,9 @@ return {
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
     },
+    init = function()
+        vim.g.nvim_tree_last_opened_source = "buffers"
+    end,
     opts = {
         close_if_last_window = true,
         window = {
@@ -20,12 +23,26 @@ return {
                     ["<M-k>"] = "move_cursor_up",
                 },
             }
+        },
+        event_handlers = {
+            {
+                event = "neo_tree_window_after_open",
+                handler = function(arg)
+                    vim.g.nvim_tree_last_opened_source = arg.source
+                end
+            }
         }
     },
     keys = {
-        {"<M-e>", "<cmd>Neotree toggle reveal<cr>", desc = "Explorer"},
-        {"<leader>ef", "<cmd>Neotree toggle float<cr>", desc = "Explorer float"},
-        {"<leader>eh", "<cmd>Neotree toggle left<cr>", desc = "Explorer left"},
-        {"<leader>el", "<cmd>Neotree toggle right<cr>", desc = "Explorer right"},
+        {"<M-e>", "<cmd>Neotree toggle reveal source=last<cr>", desc = "Explorer"},
+        {"<M-E>", function()
+            vim.ui.input({ prompt = 'Change base to: ' }, function(input)
+            if (input == nil) then return end
+                vim.cmd([[Neotree source=git_status git_base=]] .. input)
+            end)
+        end, desc = "Explorer"},
+        {"<leader>ef", "<cmd>Neotree float<cr>", desc = "Explorer float"},
+        {"<leader>eh", "<cmd>Neotree left<cr>", desc = "Explorer left"},
+        {"<leader>el", "<cmd>Neotree right<cr>", desc = "Explorer right"},
     }
 }

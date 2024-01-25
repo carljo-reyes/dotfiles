@@ -53,12 +53,12 @@ return {
                 {
                     type = "pwa-node",
                     request = "launch",
-                    name = "npm run dev-debug (console)", -- works flawlessy
+                    name = "npm run dev (console)", -- works flawlessy
                     -- trace = true, -- include debugger info
                     runtimeExecutable = "npm",
                     runtimeArgs = {
                         "run",
-                        "dev-debug",
+                        "dev",
                     },
                     rootPath = "${workspaceFolder}",
                     cwd = "${workspaceFolder}",

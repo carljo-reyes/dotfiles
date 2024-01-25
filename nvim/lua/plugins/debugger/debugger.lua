@@ -6,8 +6,8 @@ return {
     config = {
         layouts = {
             {
-                position = "left",
-                size = 40,
+                position = "top",
+                size = 10,
                 elements = {
                     {
                         id = "scopes",
@@ -28,8 +28,8 @@ return {
                 },
             },
             {
-                position = "right",
-                size = 80,
+                position = "bottom",
+                size = 15,
                 elements = {
                     {
                         id = "repl",
@@ -45,8 +45,9 @@ return {
 
     },
     keys = {
-        { "<leader>d", function() require('dapui').toggle() end },
+        { "<M-d>", function() require('dapui').toggle() end },
         { "<M-y>", function() require('dap').toggle_breakpoint() end },
+        { "<M-Y>", function() require('dap').toggle_breakpoint(vim.fn.input('Breakpoint condition: ')) end },
         { "<M-u>", function() require('dap').step_over() end },
         { "<M-i>", function() require('dap').step_into() end },
         { "<M-o>", function() require('dap').step_out() end },

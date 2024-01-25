@@ -11,7 +11,7 @@ return {
              ensure_installed = vim.tbl_keys(servers),
         },
         keys = {
-            { "<M-m>", "<cmd>Mason<cr>", desc = "Mason" },
+            { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
         }
     },
     {

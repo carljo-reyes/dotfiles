@@ -25,7 +25,7 @@ return {
                 '--add-modules=ALL-SYSTEM',
                 '--add-opens', 'java.base/java.util=ALL-UNNAMED',
                 '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-                '-jar', '/home/cal/Programs/vscode-java/server/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar',
+                '-jar', vim.fn.expand('/home/cal/Programs/vscode-java/server/plugins/org.eclipse.equinox.launcher_*.jar'),
                 '-configuration', '/home/cal/Programs/vscode-java/server/config_linux',
                 '-data', workspace_dir,
             },
@@ -62,6 +62,12 @@ return {
     end,
     keys = {
         {
+            "<leader>;h", "<cmd>JdtUpdateHotcode<cr>" --[j]ava [h]otcode replace
+        },
+        {
+            "<leader>;d", "<cmd>JdtUpdateDebugConfig<cr>" -- [j]ava [d]iscover main classes
+        },
+        {
             "<leader>;c", -- test method under [c]ursor
             function()
                 require('jdtls.dap').setup_dap()
@@ -80,6 +86,12 @@ return {
             "gt",
             function()
                 require("jdtls.tests").goto_subjects()
+            end
+        },
+        {
+            "gI",
+            function()
+                require("jdtls").super_implementation()
             end
         }
     }

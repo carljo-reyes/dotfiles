@@ -20,13 +20,22 @@ local opts = {
     change_detection = {
         enabled = true, notify = false
     },
+    git = {
+        timeout = 30
+    },
     install = {
-        missing = true,
-        colorscheme = { "tokyonight" },
-    }
+        colorscheme = { "tokyonight-moon" },
+    },
+    performance = {
+        rtp = {
+            paths = {
+                vim.fn.stdpath("config") .. '/lua/cal'
+            }
+        }
+    },
 }
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.debugger" },
-    { import = "plugins.lsp" }
+    { import = "plugins.lsp" },
 }, opts)
